@@ -21,8 +21,8 @@ export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <img src="../logos/text_newicon.png" width="30" height="24" alt="" />
+          <Link className="navbar-brand" id='title' to="/">
+            <img src={process.env.PUBLIC_URL + "/text_newicon.png"} width="25" height="25"  alt="" />
             <b>{props.title}</b></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
