@@ -9,7 +9,6 @@ export default function Navbar(props) {
     props.colorSelected(e.target.value);
   }
   const activePage = (e)=>{
-    console.log("in navbar.js file. base url is: ", process.env.PUBLIC_URL);
     if(!prevNavPage){
       prevNavPage = document.getElementById("homePage");
     }

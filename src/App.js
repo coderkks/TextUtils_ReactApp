@@ -120,8 +120,6 @@ function App() {
 
   }
 
-  console.log("base url is: ", process.env.PUBLIC_URL);
-
   return (
     <>
     <Router>
