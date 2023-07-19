@@ -128,7 +128,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route exact path={process.env.PUBLIC_URL +"/about"} element={<About darkTheme={theme} mode={mode} />}></Route>
-          <Route exact path={process.env.PUBLIC_URL +"/"} element={<TextForm darkTheme={theme} showAlert={showAlert} heading="Enter the text to analyze" mode={mode}/>}>
+          <Route exact path={process.env.PUBLIC_URL +"/"} element={<TextForm darkTheme={theme} showAlert={showAlert} heading="TextUtils - Word Counter, Character Counter" mode={mode}/>}>
           </Route>
         </Routes>
       </div>

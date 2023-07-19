@@ -1,38 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 export default function Navbar(props) {
-  let prevNavPage = null;
+
+  // when dark mode(color) is selected. Below function runs.
   const selectMode = (e)=>{
     props.colorSelected(e.target.value);
-  }
-  const activePage = (e)=>{
-    if(!prevNavPage){
-      prevNavPage = document.getElementById("homePage");
-    }
-    prevNavPage.classList.remove("active");
-    e.target.classList.add("active");
-    prevNavPage = e.target;
   }
 
   return (
     <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" id='title' to="/">
+          <Link className="navbar-brand" id='title' to={process.env.PUBLIC_URL + "/"}>
             <img src={process.env.PUBLIC_URL + "/text_newicon.png"} width="25" height="25"  alt="" />
-            <b>{props.title}</b></Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <b>{props.title}</b>
+          </Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPages" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navPages">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link fw-bold active" id="homePage" aria-current="page" to={process.env.PUBLIC_URL +"/"} onClick={activePage}>Home</Link>
+                <NavLink className="nav-link fw-bold" id="homePage" aria-current="page" to={process.env.PUBLIC_URL +"/"} activeClassName="active">Home</NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-bold" to={process.env.PUBLIC_URL +"/about"} onClick={activePage}>{props.navOpt2}</Link>
+                <NavLink className="nav-link fw-bold" to={process.env.PUBLIC_URL +"/about"} activeClassName="active">{props.navOpt2}   </NavLink>
               </li>
               
             </ul>

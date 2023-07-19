@@ -8,8 +8,11 @@ export default function Alert(props) {
     }
   return (
     // props.alert &&  means 'if(props.alert != null) then'
-    props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-        <strong>{capitalize(props.alert.type)}</strong> : {props.alert.msg}
+    //two curly braces {{}} are used below: one because of variable representation in react, other for js object.
+    <div style={{height: '50px'}}>
+    {  props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+          <strong>{capitalize(props.alert.type)}</strong> : {props.alert.msg}
+      </div>}
     </div>
   )
 }
