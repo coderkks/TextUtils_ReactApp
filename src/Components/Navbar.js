@@ -11,7 +11,7 @@ export default function Navbar(props) {
   }
 
   return (
-    <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
+    <nav className={`navbar sticky-top navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
         <div className="container-fluid">
           <Link className="navbar-brand" id='title' to={process.env.PUBLIC_URL + "/"}>
             <img src={process.env.PUBLIC_URL + "/text_newicon.png"} width="25" height="25"  alt="" />
@@ -23,10 +23,10 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navPages">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link fw-bold" id="homePage" aria-current="page" to={process.env.PUBLIC_URL +"/"} activeClassName="active">Home</NavLink>
+                <NavLink className="nav-link fw-bold" id="homePage" aria-current="page" to={process.env.PUBLIC_URL +"/"} activeclassname="active">Home</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link fw-bold" to={process.env.PUBLIC_URL +"/about"} activeClassName="active">{props.navOpt2}   </NavLink>
+                <NavLink className="nav-link fw-bold" to={process.env.PUBLIC_URL +"/about"} activeclassname="active">{props.navOpt2}   </NavLink>
               </li>
               
             </ul>

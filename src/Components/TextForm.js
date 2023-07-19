@@ -22,10 +22,7 @@ export default function TextForm(props) {
         props.showAlert("All text Cleared", "success")
     }
     const handleCopy =() =>{
-        let text = document.getElementById("mybox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges(); // removes selection from text. Means text won't be shown as selected but it will be copied to clipboard as usual.
+        navigator.clipboard.writeText(text);
         props.showAlert("Text Copied to Clipboard", "success")
     }
     const handleExtraSpace = ()=>{
